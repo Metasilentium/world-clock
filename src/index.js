@@ -1,4 +1,16 @@
 function updateTime() {
+  let puertoRicoElement = document.querySelector("#puerto-rico");
+  if (puertoRicoElement) {
+    let puertoRicoDateElement = puertoRicoElement.querySelector(".date");
+    let puertoRicoTimeElement = puertoRicoElement.querySelector(".time");
+    let puertoRicoTime = moment().tz("America/Puerto_Rico");
+
+    puertoRicoDateElement.innerHTML = puertoRicoTime.format("MMMM Do YYYY");
+    puertoRicoTimeElement.innerHTML = puertoRicoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
     let losAngelesDateElement = losAngelesElement.querySelector(".date");
